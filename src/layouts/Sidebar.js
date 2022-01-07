@@ -15,7 +15,7 @@ const navigation = [
     icon: "bi bi-bell",
   },
   {
-    title: "Completed visits",
+    title: "Log completed visit",
     href: "/badges",
     icon: "bi bi-patch-check",
   },
@@ -30,11 +30,11 @@ const navigation = [
     icon: "bi bi-card-text",
   },
   
-  // {
-  //   title: "Table",
-  //   href: "/table",
-  //   icon: "bi bi-layout-split",
-  // },
+  {
+    title: "Table",
+    href: "/table",
+    icon: "bi bi-layout-split",
+  },
   {
     title: "Support",
     href: "/forms",
@@ -80,7 +80,7 @@ const Sidebar = () => {
             <i className="bi bi-x"></i>
           </Button>
         </div>
-        <div className="bg-dark text-white p-2 opacity-75">Steave Rojer</div>
+        <div className="bg-dark text-white p-2 opacity-75">Sbusiso Nkala (active)</div>
       </div>
       <div className="p-3 mt-2">
         <Nav vertical className="sidebarNav">

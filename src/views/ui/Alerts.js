@@ -6,6 +6,7 @@ import {
   CardBody,
   CardTitle,
 } from "reactstrap";
+import Message from "../Message"
 
 const Alerts = () => {
   // For Dismiss Button with Alert
@@ -20,7 +21,7 @@ const Alerts = () => {
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-1*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2"> </i>
           Alert
@@ -49,7 +50,7 @@ const Alerts = () => {
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-2*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
           Alert with Links
@@ -114,11 +115,11 @@ const Alerts = () => {
             </Alert>
           </div>
         </CardBody>
-      </Card>
+      </Card> */} *
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-3*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
           Alert with Additional content
@@ -140,27 +141,40 @@ const Alerts = () => {
             </Alert>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-4*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
-          Alert with Dissmissing
+          Inbox
         </CardTitle>
         <CardBody className="">
           <div>
             <Alert color="info" isOpen={visible} toggle={onDismiss.bind(null)}>
-              I am an alert and I can be dismissed!
+              <p>
+              Good day, please note that amaroom amahle is going to have a system mantainance at 12:00 pm today
+              </p>
+            </Alert>
+            <Alert color="info" isOpen={visible} toggle={onDismiss.bind(null)}>
+              <p>
+              Happy new year to all of our partners, we have a new year gift for you.
+              </p>
             </Alert>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
+
+      <Message title={"Viewing Request"} message={"Learmore Bango would like to view your property listing on 13 street South Gate JHB"} />
+      <Message title={"Viewing Request"} message={"James Dube would like to view your property listing on 11 street Soweto JHB"}/>
+      <Message title={"Viewing Request"} message={"Ronald Butheleziu would like to view your property listing on 11 street Soweto JHB"}/>
+      
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-5*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
           Alert with Uncontrolled [disable] Alerts
@@ -172,11 +186,11 @@ const Alerts = () => {
             </UncontrolledAlert>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-6*/}
       {/* --------------------------------------------------------------------------------*/}
-      <Card>
+      {/* <Card>
         <CardTitle tag="h6" className="border-bottom p-3 mb-0">
           <i className="bi bi-bell me-2" />
           Alerts without fade
@@ -196,7 +210,7 @@ const Alerts = () => {
             </UncontrolledAlert>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
 
       {/* --------------------------------------------------------------------------------*/}
       {/* End Inner Div*/}

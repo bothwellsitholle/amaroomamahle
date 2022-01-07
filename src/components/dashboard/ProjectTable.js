@@ -10,46 +10,46 @@ const tableData = [
     avatar: user1,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
-    project: "Flexy React",
+    project: "073 345 1323",
     status: "pending",
-    weeks: "35",
-    budget: "95K",
+    weeks: "01 Jan 2022",
+    budget: "R1500",
   },
   {
     avatar: user2,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
-    project: "Lading pro React",
+    project: "074 6645 1326",
     status: "done",
-    weeks: "35",
-    budget: "95K",
+    weeks: "02 Jan 2022",
+    budget: "R2500",
   },
   {
     avatar: user3,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
-    project: "Elite React",
+    project: "063 345 0001",
     status: "holt",
-    weeks: "35",
-    budget: "95K",
+    weeks: "02 Jan 2022",
+    budget: "R9000",
   },
   {
     avatar: user4,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
-    project: "Flexy React",
+    project: "061 145 3330",
     status: "pending",
-    weeks: "35",
-    budget: "95K",
+    weeks: "03 Jan 2022",
+    budget: "R7500",
   },
   {
     avatar: user5,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
-    project: "Ample React",
+    project: "078 845 9923",
     status: "done",
-    weeks: "35",
-    budget: "95K",
+    weeks: "06 Jan 2022",
+    budget: "R2500",
   },
 ];
 
@@ -58,20 +58,20 @@ const ProjectTables = () => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle tag="h5">Project Listing</CardTitle>
+          <CardTitle tag="h5">Viewings</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Overview of the projects
+            your list of recent viewings and their statuses
           </CardSubtitle>
 
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
-                <th>Team Lead</th>
-                <th>Project</th>
+                <th>Client Name</th>
+                <th>Contact Number</th>
 
                 <th>Status</th>
-                <th>Weeks</th>
-                <th>Budget</th>
+                <th>Date</th>
+                <th>Cost</th>
               </tr>
             </thead>
             <tbody>

@@ -23,7 +23,7 @@ const SalesChart = () => {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "30%",
+        columnWidth: "60%",
         borderRadius: 2,
       },
     },
@@ -56,22 +56,22 @@ const SalesChart = () => {
     ],
   };
   const series = [
+    // {
+    //   name: "2020",
+    //   data: [20, 40, 50, 30, 40, 50, 30, 30, 40],
+    // },
     {
-      name: "2020",
-      data: [20, 40, 50, 30, 40, 50, 30, 30, 40],
-    },
-    {
-      name: "2022",
-      data: [10, 20, 40, 60, 20, 40, 60, 60, 20],
+      name: "2021",
+      data: [10, 20, 40, 60, 20, 40, 90, 60, 20],
     },
   ];
 
   return (
     <Card>
       <CardBody>
-        <CardTitle tag="h5">Sales Summary</CardTitle>
+        <CardTitle tag="h5">My Conversion Rate</CardTitle>
         <CardSubtitle className="text-muted" tag="h6">
-          Yearly Sales Report
+           % montly conversion rate report
         </CardSubtitle>
         <Chart options={options} series={series} type="bar" height="379" />
       </CardBody>
