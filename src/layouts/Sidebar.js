@@ -15,12 +15,12 @@ const navigation = [
     icon: "bi bi-bell",
   },
   {
-    title: "Log completed visit",
+    title: "Visits",
     href: "/badges",
     icon: "bi bi-patch-check",
   },
   {
-    title: "Log a sale",
+    title: "Log A Sale",
     href: "/buttons",
     icon: "bi bi-hdd-stack",
   },
@@ -31,7 +31,7 @@ const navigation = [
   },
   
   {
-    title: "Table",
+    title: "Appointments",
     href: "/table",
     icon: "bi bi-layout-split",
   },

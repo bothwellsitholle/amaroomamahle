@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/date-fns": "^2.11.0",
+    "@date-io/dayjs": "^2.11.0",
+    "@date-io/luxon": "^2.11.1",
+    "@date-io/moment": "^2.11.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.7",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
