@@ -11,8 +11,27 @@ import {
   Input,
   FormText,
 } from 'reactstrap';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import React, { useState } from 'react';
+import Switch from '@mui/material/Switch';
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 const Notifications = () => {
+  const [state, setState] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: true,
+    gilad1: true,
+    jason1: false,
+    antoine1: true,
+  });
+
+  const handleChange = (event) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.checked,
+    });
+  };
   return (
     <Row className='mt-3'>
       <Col xs='6'>
@@ -21,50 +40,103 @@ const Notifications = () => {
         {/* --------------------------------------------------------------------------------*/}
         <Card>
           <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
-            <i className='bi bi-bell me-2'> </i>
-            Notifications
+            <i className='bi bi-bell me-2'></i>
+            Updates
           </CardTitle>
           <CardBody>
-          <Form>
-              <FormGroup check>
-                {/* <legend>Notifications</legend> */}
-                <Input type='checkbox' checked={true}/> <Label check>Email</Label>
+            <Form>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.gilad1}
+                      onChange={handleChange}
+                      name='gilad1'
+                    />
+                  }
+                  label='Email'
+                />
               </FormGroup>
-              <FormGroup check>
-                <Input type='checkbox' checked={false}/> <Label check>Text</Label>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason1}
+                      onChange={handleChange}
+                      name='jason1'
+                    />
+                  }
+                  label='Text'
+                />
               </FormGroup>
-              <FormGroup check>
-                <Input type='checkbox' checked={true}/> <Label check>Phone call</Label>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.antoine1}
+                      onChange={handleChange}
+                      name='antoine1'
+                    />
+                  }
+                  label='Phone Call'
+                />
               </FormGroup>
-              {/* <Button>Submit</Button> */}
             </Form>
           </CardBody>
         </Card>
       </Col>
       <Col xs='6'>
-      <Card>
+        <Card>
           <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
             <i className='bi bi-card-text'> </i>
             Messages
           </CardTitle>
           <CardBody>
             <Form>
-              <FormGroup check>
-                {/* <legend>Notifications</legend> */}
-                <Input type='checkbox' checked={true}/> <Label check>Email</Label>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.gilad}
+                      onChange={handleChange}
+                      name='gilad'
+                    />
+                  }
+                  label='Email'
+                />
               </FormGroup>
-              <FormGroup check>
-                <Input type='checkbox' checked={true}/> <Label check>Text</Label>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.jason}
+                      onChange={handleChange}
+                      name='jason'
+                    />
+                  }
+                  label='Text'
+                />
               </FormGroup>
-              <FormGroup check>
-                <Input type='checkbox' /> <Label check>Phone call</Label>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={state.antoine}
+                      onChange={handleChange}
+                      name='antoine'
+                    />
+                  }
+                  label='Phone Call'
+                />
               </FormGroup>
             </Form>
           </CardBody>
         </Card>
       </Col>
-      <div style={{with: 120}}>
-      <Button>Save</Button>
+      <div style={{ with: 120 }}>
+        <Button  color='primary'>
+          Save
+        </Button>
       </div>
     </Row>
   );

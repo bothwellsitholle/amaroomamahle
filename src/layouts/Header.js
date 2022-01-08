@@ -1,5 +1,5 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Navbar,
   Collapse,
@@ -12,60 +12,73 @@ import {
   DropdownItem,
   Dropdown,
   Button,
-} from "reactstrap";
+} from 'reactstrap';
 // import Logo from "./Logo";
-import { ReactComponent as LogoWhite } from "../assets/images/logos/materialprowhite.svg";
-import user1 from "../assets/images/users/user4.jpg";
+import { ReactComponent as LogoWhite } from '../assets/images/logos/materialprowhite.svg';
+import user1 from '../assets/images/users/user4.jpg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
+  let navigate = useNavigate();
+
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
     setIsOpen(!isOpen);
   };
   const showMobilemenu = () => {
-    document.getElementById("sidebarArea").classList.toggle("showSidebar");
+    document.getElementById('sidebarArea').classList.toggle('showSidebar');
   };
   return (
-    <Navbar color="primary" dark expand="md" className="fix-header">
-      <div className="d-flex align-items-center">
-        <div className="d-lg-block d-none me-5 pe-3">
+    <Navbar color='primary' dark expand='md' className='fix-header'>
+      <div className='d-flex align-items-center'>
+        <div className='d-lg-block d-none me-5 pe-3'>
           {/* <Logo /> */}
-          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <img src="https://amaroomamahle.co.za/wp-content/uploads/2021/11/AMAROOM.png" height="50" width="100" alt="logo"/>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              src='https://amaroomamahle.co.za/wp-content/uploads/2021/11/AMAROOM.png'
+              height='50'
+              width='100'
+              alt='logo'
+            />
           </div>
         </div>
-        <NavbarBrand href="/">
-          <LogoWhite className=" d-lg-none" />
+        <NavbarBrand href='/'>
+          <LogoWhite className=' d-lg-none' />
         </NavbarBrand>
         <Button
-          color="primary"
-          className=" d-lg-none"
+          color='primary'
+          className=' d-lg-none'
           onClick={() => showMobilemenu()}
         >
-          <i className="bi bi-list"></i>
+          <i className='bi bi-list'></i>
         </Button>
       </div>
-      <div className="hstack gap-2">
+      <div className='hstack gap-2'>
         <Button
-          color="primary"
-          size="sm"
-          className="d-sm-block d-md-none"
+          color='primary'
+          size='sm'
+          className='d-sm-block d-md-none'
           onClick={Handletoggle}
         >
           {isOpen ? (
-            <i className="bi bi-x"></i>
+            <i className='bi bi-x'></i>
           ) : (
-            <i className="bi bi-three-dots-vertical"></i>
+            <i className='bi bi-three-dots-vertical'></i>
           )}
         </Button>
       </div>
 
       <Collapse navbar isOpen={isOpen}>
-        <Nav className="me-auto" navbar>
+        <Nav className='me-auto' navbar>
           {/* <NavItem>
             <Link to="/starter" className="nav-link">
               Starter
@@ -89,22 +102,33 @@ const Header = () => {
           </UncontrolledDropdown> */}
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="transparent">
+          <DropdownToggle color='transparent'>
             <img
               src={user1}
-              alt="profile"
-              className="rounded-circle"
-              width="50"
+              alt='profile'
+              className='rounded-circle'
+              width='50'
             ></img>
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
-            <DropdownItem divider />
-            {/* <DropdownItem>My Balance</DropdownItem> */}
+            <DropdownItem onClick={() => {navigate('/grid')}}>Settings</DropdownItem>
+            <DropdownItem onClick={() => {navigate('/about')}}> Edit Profile</DropdownItem>
+            {/* <DropdownItem divider />
             <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem>
+              <span
+                href='http://localhost:3000/'
+                onClick={() => {
+                  console.log('logout clicked!');
+                  window.location.reload();
+                  window.localStorage.removeItem('token');
+                  navigate("/");
+                }}
+              >
+                Logout
+              </span>
+            </DropdownItem> */}
           </DropdownMenu>
         </Dropdown>
       </Collapse>

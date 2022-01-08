@@ -30,7 +30,7 @@ const LogASale = () => {
           {/* --------------------------------------------------------------------------------*/}
           <Card>
             <CardTitle tag="h4" className="border-bottom p-3 mb-0">
-              Your Sales List
+              Your Recent Sales
             </CardTitle>
             <CardBody className="">
               <SaleList />

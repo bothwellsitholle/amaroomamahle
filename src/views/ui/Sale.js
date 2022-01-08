@@ -42,8 +42,7 @@ const Sale = () => {
                 />
               </FormGroup>
               <br />
-              <br />
-              <Button>Submit</Button>
+              <Button color="primary">Submit</Button>
             </Form>
           </CardBody>
         </Card>

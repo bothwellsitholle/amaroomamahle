@@ -17,7 +17,7 @@ const tableData = [
   },
   {
     avatar: user2,
-    name: "Hanna Gover",
+    name: "Linda Motaung",
     email: "hgover@gmail.com",
     project: "074 6645 1326",
     status: "done",
@@ -26,16 +26,16 @@ const tableData = [
   },
   {
     avatar: user3,
-    name: "Hanna Gover",
+    name: "Amanda Cooper",
     email: "hgover@gmail.com",
     project: "063 345 0001",
-    status: "holt",
+    status: "done",
     weeks: "02 Jan 2022",
     budget: "R9000",
   },
   {
     avatar: user4,
-    name: "Hanna Gover",
+    name: "Bothwell Sithole",
     email: "hgover@gmail.com",
     project: "061 145 3330",
     status: "pending",
@@ -44,7 +44,7 @@ const tableData = [
   },
   {
     avatar: user5,
-    name: "Hanna Gover",
+    name: "Max Williams",
     email: "hgover@gmail.com",
     project: "078 845 9923",
     status: "done",
@@ -67,7 +67,7 @@ const ProjectTables = () => {
             <thead>
               <tr>
                 <th>Client Name</th>
-                <th>Contact Number</th>
+                <th>Phone</th>
 
                 <th>Status</th>
                 <th>Date</th>

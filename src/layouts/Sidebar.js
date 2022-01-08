@@ -1,33 +1,33 @@
-import { Button, Nav, NavItem } from "reactstrap";
-import { Link, useLocation } from "react-router-dom";
-import user1 from "../assets/images/users/user4.jpg";
-import probg from "../assets/images/bg/download.jpg";
+import { Button, Nav, NavItem } from 'reactstrap';
+import { Link, useLocation } from 'react-router-dom';
+import user1 from '../assets/images/users/user4.jpg';
+import probg from '../assets/images/bg/download.jpg';
 
 const navigation = [
   {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: "bi bi-speedometer2",
+    title: 'Dashboard',
+    href: '/dashboard',
+    icon: 'bi bi-speedometer2',
   },
   {
-    title: "Messages",
-    href: "/alerts",
-    icon: "bi bi-bell",
+    title: 'Messages',
+    href: '/alerts',
+    icon: 'bi bi-bell',
   },
   {
-    title: "Visits",
-    href: "/badges",
-    icon: "bi bi-patch-check",
+    title: 'Visits',
+    href: '/badges',
+    icon: 'bi bi-patch-check',
   },
   {
-    title: "Log A Sale",
-    href: "/buttons",
-    icon: "bi bi-hdd-stack",
+    title: 'Log A Sale',
+    href: '/buttons',
+    icon: 'bi bi-hdd-stack',
   },
   {
-    title: "Appointments",
-    href: "/table",
-    icon: "bi bi-layout-split",
+    title: 'Appointments',
+    href: '/table',
+    icon: 'bi bi-layout-split',
   },
   // {
   //   title: "About",
@@ -35,9 +35,9 @@ const navigation = [
   //   icon: "bi bi-card-text",
   // },
   {
-    title: "Support",
-    href: "/forms",
-    icon: "bi bi-textarea-resize",
+    title: 'Support',
+    href: '/forms',
+    icon: 'bi bi-textarea-resize',
   },
   // {
   //   title: "Support",
@@ -45,68 +45,79 @@ const navigation = [
   //   icon: "bi bi-link",
   // },
   {
-    title: "Settings",
-    href: "/grid",
-    icon: "bi bi-columns",
+    title: 'Settings',
+    href: '/grid',
+    icon: 'bi bi-columns',
   },
   {
-    title: "Account",
-    href: "/about",
-    icon: "bi bi-people",
+    title: 'Account',
+    href: '/about',
+    icon: 'bi bi-people',
   },
 ];
 
 const Sidebar = () => {
   const showMobilemenu = () => {
-    document.getElementById("sidebarArea").classList.toggle("showSidebar");
+    document.getElementById('sidebarArea').classList.toggle('showSidebar');
   };
   let location = useLocation();
 
+  // const logoutHandler = () => {
+  //   <Link
+  //     to={'/'}
+  //   ></Link>;
+  // };
+
   return (
     <div>
-      <div className="d-flex align-items-center"></div>
+      <div className='d-flex align-items-center'></div>
       <div
-        className="profilebg"
+        className='profilebg'
         style={{ background: `url(${probg}) no-repeat` }}
       >
-        <div className="p-3 d-flex">
-          <img src={user1} alt="user" width="50" className="rounded-circle" />
+        <div className='p-3 d-flex'>
+          <img src={user1} alt='user' width='50' className='rounded-circle' />
           <Button
-            color="white"
-            className="ms-auto text-white d-lg-none"
+            color='white'
+            className='ms-auto text-white d-lg-none'
             onClick={() => showMobilemenu()}
           >
-            <i className="bi bi-x"></i>
+            <i className='bi bi-x'></i>
           </Button>
         </div>
-        <div className="bg-dark text-white p-2 opacity-75">Sbusiso Nkala (active)</div>
+        <div className='bg-dark text-white p-2 opacity-75'>
+          Sbusiso Nkala (active)
+        </div>
       </div>
-      <div className="p-3 mt-2">
-        <Nav vertical className="sidebarNav">
+      <div className='p-3 mt-2'>
+        <Nav vertical className='sidebarNav'>
           {navigation.map((navi, index) => (
-            <NavItem key={index} className="sidenav-bg">
+            <NavItem key={index} className='sidenav-bg'>
               <Link
                 to={navi.href}
                 className={
                   location.pathname === navi.href
-                    ? "active nav-link py-3"
-                    : "nav-link text-secondary py-3"
+                    ? 'active nav-link py-3'
+                    : 'nav-link text-secondary py-3'
                 }
               >
                 <i className={navi.icon}></i>
-                <span className="ms-3 d-inline-block">{navi.title}</span>
+                <span className='ms-3 d-inline-block'>{navi.title}</span>
               </Link>
             </NavItem>
           ))}
-          <Button
-            color="danger"
-            tag="a"
-            target="_blank"
-            className="mt-3"
-            href="https://wrappixel.com/templates/materialpro-react-admin/?ref=33"
-          >
-            Logout
-          </Button>
+            <Button
+              color='danger'
+              tag='a'
+              target='_self'
+              className='mt-3'
+              href='http://localhost:3000/'
+              onClick={() => {
+                window.localStorage.removeItem('token');
+              }}
+            >
+              Logout
+            </Button>
         </Nav>
       </div>
     </div>

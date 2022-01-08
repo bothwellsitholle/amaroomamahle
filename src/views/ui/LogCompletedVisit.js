@@ -37,8 +37,8 @@ const Forms = () => {
                 </Input>
               </FormGroup>
               <br />
-              <FormGroup>
-                <Label for='exampleSelect'>Select Date & Time completed</Label>
+              <FormGroup >
+                <Label for='exampleSelect'>Select Date & Time Completed</Label>
                 <Stack>
                   <TextField
                     id='datetime-local'
@@ -53,7 +53,7 @@ const Forms = () => {
                 </Stack>
               </FormGroup>
               <br />
-              <Button>Submit</Button>
+              <Button color="primary">Submit</Button>
             </Form>
           </CardBody>
         </Card>

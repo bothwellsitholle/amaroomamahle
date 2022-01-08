@@ -17,7 +17,7 @@ const tableData = [
   },
   {
     avatar: user2,
-    name: "Hanna Gover",
+    name: "Linda Motaung",
     email: "hgover@gmail.com",
     project: "074 6645 1326",
     status: "done",
@@ -26,7 +26,7 @@ const tableData = [
   },
   {
     avatar: user3,
-    name: "Hanna Gover",
+    name: "Cathrine Gover",
     email: "hgover@gmail.com",
     project: "063 345 0001",
     status: "holt",
@@ -35,7 +35,7 @@ const tableData = [
   },
   {
     avatar: user4,
-    name: "Hanna Gover",
+    name: "Bothwell Sithole",
     email: "hgover@gmail.com",
     project: "061 145 3330",
     status: "pending",
@@ -44,7 +44,7 @@ const tableData = [
   },
   {
     avatar: user5,
-    name: "Hanna Gover",
+    name: "Andrew Smith",
     email: "hgover@gmail.com",
     project: "078 845 9923",
     status: "done",
@@ -62,7 +62,7 @@ const CompletedVisits = () => {
             <thead>
               <tr>
                 <th>Client Name</th>
-                <th>Contact Number</th>
+                <th>Cell</th>
                 {/* <th>Status</th> */}
                 <th>Date</th>
                 <th>Address</th>

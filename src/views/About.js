@@ -14,27 +14,24 @@ const About = () => {
           </CardTitle>
           <CardBody className='p-4'>
             <Row justify-content>
-              <Col lg='8'><img
-                  src="https://demos.wrappixel.com/free-admin-templates/angular/landingpage-styles/assets/images/screenshots/materialpro-react-pro-lp-img.jpg"
-                  alt="my"
-                  width="120"
-                  height="120"
-                  style={{borderRadius: 60}}
+              <Col lg='8'>
+                <img
+                  src='https://demos.wrappixel.com/free-admin-templates/angular/landingpage-styles/assets/images/screenshots/materialpro-react-pro-lp-img.jpg'
+                  alt='my'
+                  width='120'
+                  height='120'
+                  style={{ borderRadius: 60 }}
                 />
                 <h3 className='mt-4'>Sbusiso Nkala</h3>
-                <br/>
-                <p className=' mb-4'>
-                  Agent’s no: 45144
-                </p>
-                <p className=' mb-4'>
-                  Status: Active
-                </p>
+                <br />
+                <p className=' mb-4'>Agent’s no: 45144</p>
+                <p className=' mb-4'>Status: Active</p>
 
                 <br />
                 <Button
                   className='mt-3'
                   color='primary'
-                  href='https://wrappixel.com/templates/materialpro-react-admin/?ref=33'
+                  href='http://localhost:3000/'
                   target='_blank'
                 >
                   Check Pro Version

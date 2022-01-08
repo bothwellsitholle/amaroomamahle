@@ -14,42 +14,47 @@ const tableData = [
     status: "pending",
     weeks: "01 Jan 2022",
     budget: "2441 Main Rd, Bedfordview",
+    amount: 'R2500'
   },
   {
     avatar: user2,
-    name: "Hanna Gover",
+    name: "Linda Motaung",
     email: "hgover@gmail.com",
     project: "074 6645 1326",
     status: "done",
     weeks: "02 Jan 2022",
     budget: "1415 Thomas St, pretoria",
+    amount: 'R7500'
   },
   {
     avatar: user3,
-    name: "Hanna Gover",
+    name: "Mary Cooper",
     email: "hgover@gmail.com",
     project: "063 345 0001",
     status: "holt",
     weeks: "02 Jan 2022",
     budget: " 389 Gemsbok St, santon",
+    amount: 'R2000'
   },
   {
     avatar: user4,
-    name: "Hanna Gover",
+    name: "Bothwell Sithole",
     email: "hgover@gmail.com",
     project: "061 145 3330",
     status: "pending",
     weeks: "03 Jan 2022",
     budget: "Street:  1535 Bo Meul St Fish Hoek",
+    amount: 'R2500'
   },
   {
     avatar: user5,
-    name: "Hanna Gover",
+    name: "Ronald Gover",
     email: "hgover@gmail.com",
     project: "078 845 9923",
     status: "done",
     weeks: "06 Jan 2022",
     budget: "883 Impala St, jhb central",
+    amount: 'R3500'
   },
 ];
 
@@ -66,6 +71,7 @@ const SalesList = () => {
                 {/* <th>Status</th> */}
                 <th>Date</th>
                 <th>Address</th>
+                <th>Amount</th>
               </tr>
             </thead>
             <tbody>
@@ -87,17 +93,9 @@ const SalesList = () => {
                     </div>
                   </td>
                   <td>{tdata.project}</td>
-                  {/* <td>
-                    {tdata.status === "pending" ? (
-                      <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
-                    ) : tdata.status === "holt" ? (
-                      <span className="p-2 bg-warning rounded-circle d-inline-block ms-3"></span>
-                    ) : (
-                      <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
-                    )}
-                  </td> */}
                   <td>{tdata.weeks}</td>
                   <td>{tdata.budget}</td>
+                  <td>{tdata.amount}</td>
                 </tr>
               ))}
             </tbody>

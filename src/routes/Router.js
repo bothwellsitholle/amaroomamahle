@@ -21,9 +21,12 @@ const Grid = lazy(() => import("../views/ui/Grid"));
 const Tables = lazy(() => import("../views/ui/Tables"));
 const  Appointments = lazy(() => import("../views/ Appointments"));
 const Forms = lazy(() => import("../views/ui/Forms"));
+const Support = lazy(() => import("../views/ui/Support"));
 const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 
 /*****Routes******/
+
+const mode = "login";
 
 const ThemeRoutes = [
   {
@@ -31,6 +34,7 @@ const ThemeRoutes = [
     element: <FullLayout />,
     children: [
       { path: "/", element: <Navigate to="/dashboard" /> },
+      // { path: "/dashboard", exact: true, element: <Starter /> },
       { path: "/dashboard", exact: true, element: <Starter /> },
       { path: "/about", exact: true, element: <Account /> },
       { path: "/alerts", exact: true, element: <Messages /> },
@@ -39,7 +43,7 @@ const ThemeRoutes = [
       { path: "/cards", exact: true, element: <Cards /> },
       { path: "/grid", exact: true, element: <Settings/> },
       { path: "/table", exact: true, element: <Appointments /> },
-      { path: "/forms", exact: true, element: <Forms /> },
+      { path: "/forms", exact: true, element: <Support /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
     ],
   },
