@@ -25,16 +25,15 @@ const navigation = [
     icon: "bi bi-hdd-stack",
   },
   {
-    title: "About",
-    href: "/cards",
-    icon: "bi bi-card-text",
-  },
-  
-  {
     title: "Appointments",
     href: "/table",
     icon: "bi bi-layout-split",
   },
+  // {
+  //   title: "About",
+  //   href: "/cards",
+  //   icon: "bi bi-card-text",
+  // },
   {
     title: "Support",
     href: "/forms",

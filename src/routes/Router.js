@@ -14,9 +14,12 @@ const About = lazy(() => import("../views/About.js"));
 const Visits = lazy(() => import("../views/Visits"));
 const LogASale = lazy(() => import("../views/LogASale"));
 const Messages = lazy(() => import("../views/Messgs"));
+const Settings = lazy(() => import("../views/Settings"));
+const Account = lazy(() => import("../views/Account"));
 const Cards = lazy(() => import("../views/ui/Cards"));
 const Grid = lazy(() => import("../views/ui/Grid"));
 const Tables = lazy(() => import("../views/ui/Tables"));
+const  Appointments = lazy(() => import("../views/ Appointments"));
 const Forms = lazy(() => import("../views/ui/Forms"));
 const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 
@@ -29,13 +32,13 @@ const ThemeRoutes = [
     children: [
       { path: "/", element: <Navigate to="/dashboard" /> },
       { path: "/dashboard", exact: true, element: <Starter /> },
-      { path: "/about", exact: true, element: <About /> },
+      { path: "/about", exact: true, element: <Account /> },
       { path: "/alerts", exact: true, element: <Messages /> },
       { path: "/badges", exact: true, element: <Visits /> },
       { path: "/buttons", exact: true, element: <LogASale /> },
       { path: "/cards", exact: true, element: <Cards /> },
-      { path: "/grid", exact: true, element: <Grid /> },
-      { path: "/table", exact: true, element: <Tables /> },
+      { path: "/grid", exact: true, element: <Settings/> },
+      { path: "/table", exact: true, element: <Appointments /> },
       { path: "/forms", exact: true, element: <Forms /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
     ],
