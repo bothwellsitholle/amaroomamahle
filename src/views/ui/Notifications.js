@@ -134,9 +134,7 @@ const Notifications = () => {
         </Card>
       </Col>
       <div style={{ with: 120 }}>
-        <Button  color='primary'>
-          Save
-        </Button>
+        <Button color='primary'>Save</Button>
       </div>
     </Row>
   );

@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import {
   Card,
   Row,
@@ -11,10 +12,22 @@ import {
 } from 'reactstrap';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
+import Alert from './Alert';
 
 const Forms = () => {
+    const [openAlert, setOpenAlert] = useState(false)
+
+    const closeAlert = () => {
+        setOpenAlert(false);
+    }
+
+    const onSubmit = () => {
+        setOpenAlert(true)
+    }
+
   return (
     <Row>
+      {openAlert && <Alert message='Successfully submitted request'  closeAlert={closeAlert}/>}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
@@ -37,7 +50,7 @@ const Forms = () => {
                 </Input>
               </FormGroup>
               <br />
-              <FormGroup >
+              <FormGroup>
                 <Label for='exampleSelect'>Select Date & Time Completed</Label>
                 <Stack>
                   <TextField
@@ -53,7 +66,7 @@ const Forms = () => {
                 </Stack>
               </FormGroup>
               <br />
-              <Button color="primary">Submit</Button>
+              <Button color='primary' onClick={() => onSubmit()}>Submit</Button>
             </Form>
           </CardBody>
         </Card>

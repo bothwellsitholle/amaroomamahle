@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Card,
   Row,
@@ -9,10 +10,21 @@ import {
   Label,
   Input,
 } from 'reactstrap';
+import Alert from './Alert'
 
 const Sale = () => {
+    const [openAlert, setOpenAlert] = useState(false)
+
+    const closeAlert = () => {
+        setOpenAlert(false);
+    }
+
+    const onSubmit = () => {
+        setOpenAlert(true)
+    }
   return (
     <Row>
+         {openAlert && <Alert message='Successfully submitted request'  closeAlert={closeAlert}/>}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
@@ -42,7 +54,7 @@ const Sale = () => {
                 />
               </FormGroup>
               <br />
-              <Button color="primary">Submit</Button>
+              <Button color="primary" onClick={onSubmit}>Submit</Button>
             </Form>
           </CardBody>
         </Card>
