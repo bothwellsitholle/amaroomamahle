@@ -33,13 +33,13 @@ const Support = () => {
         <Card>
           {openAlert && (
             <Alert
-              message='Successfully submitted request'
+              message='Successfully opened ticket, we will get in touch with you'
               closeAlert={closeAlert}
             />
           )}
           <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
             {/* <i className="bi bi-bell me-2"> </i> */}
-            Open Ticket
+            Send us your message
           </CardTitle>
           <CardBody>
             <Form>

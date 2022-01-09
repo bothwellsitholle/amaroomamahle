@@ -1,4 +1,4 @@
-import { Badge, Button, Card, CardBody, CardTitle, Row, Col } from "reactstrap";
+import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import Notifications from './ui/Notifications';
 import UpdatePassword from './ui/UpdatePassword';
 
@@ -26,7 +26,7 @@ const Settings = () => {
       <Row>
         <Col xs="12" md="12" sm="12">
           {/* --------------------------------------------------------------------------------*/}
-          {/* Card-1*/}
+          {/* Card-2*/}
           {/* --------------------------------------------------------------------------------*/}
           <Card>
             <CardTitle tag="h4" className="border-bottom p-3 mb-0">

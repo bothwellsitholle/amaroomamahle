@@ -2,28 +2,37 @@ import {
   Card,
   Row,
   Col,
-  CardTitle,
   CardBody,
   Button,
   Form,
   FormGroup,
   Label,
   Input,
-  FormText,
 } from 'reactstrap';
+import {useState} from 'react'
+import Alert from './Alert';
+
 
 const UpdatePassword = () => {
+    const [openAlert, setOpenAlert] = useState(false);
+
+  const closeAlert = () => {
+    setOpenAlert(false);
+  };
+
+  const onSubmit = () => {
+    setOpenAlert(true);
+  };
   return (
     <Row>
+        {openAlert && (
+            <Alert
+              message='Successfully saved changes'
+              closeAlert={closeAlert}
+            />
+          )}
       <Col>
-        {/* --------------------------------------------------------------------------------*/}
-        {/* Card-1*/}
-        {/* --------------------------------------------------------------------------------*/}
-        <Card>
-          {/* <CardTitle tag="h6" className="border-bottom p-3 mb-0"> */}
-          {/* <i className="bi bi-bell me-2"> </i> */}
-          {/* Update Password
-            </CardTitle> */}
+      <Card>
           <CardBody>
             <Form>
               <FormGroup>
@@ -44,7 +53,7 @@ const UpdatePassword = () => {
                   type='password'
                 />
               </FormGroup>
-              <Button className='mt-3' color='primary'>
+              <Button className='mt-3' color='primary' onClick={onSubmit}>
                 Save
               </Button>
             </Form>

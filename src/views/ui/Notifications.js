@@ -7,14 +7,11 @@ import {
   Button,
   Form,
   FormGroup,
-  Label,
-  Input,
-  FormText,
 } from 'reactstrap';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import React, { useState } from 'react';
 import Switch from '@mui/material/Switch';
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+import Alert from './Alert'
 
 const Notifications = () => {
   const [state, setState] = React.useState({
@@ -26,6 +23,17 @@ const Notifications = () => {
     antoine1: true,
   });
 
+
+  const [openAlert, setOpenAlert] = useState(false)
+
+    const closeAlert = () => {
+        setOpenAlert(false);
+    }
+
+    const onSubmit = () => {
+        setOpenAlert(true)
+    }
+
   const handleChange = (event) => {
     setState({
       ...state,
@@ -34,6 +42,7 @@ const Notifications = () => {
   };
   return (
     <Row className='mt-3'>
+        {openAlert && <Alert message='successfully saved changes'  closeAlert={closeAlert}/>}
       <Col xs='6'>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
@@ -134,7 +143,7 @@ const Notifications = () => {
         </Card>
       </Col>
       <div style={{ with: 120 }}>
-        <Button color='primary'>Save</Button>
+        <Button color='primary' onClick={onSubmit}>Save</Button>
       </div>
     </Row>
   );

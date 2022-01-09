@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Card,
   Row,
@@ -9,10 +11,22 @@ import {
   Label,
   Input,
 } from 'reactstrap';
+import Alert from './Alert'
+
 
 const Profile = () => {
+    const [openAlert, setOpenAlert] = useState(false)
+
+    const closeAlert = () => {
+        setOpenAlert(false);
+    }
+
+    const onSubmit = () => {
+        setOpenAlert(true)
+    }
   return (
     <Row>
+         {openAlert && <Alert message='Successfully saved changes'  closeAlert={closeAlert}/>}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
@@ -61,8 +75,8 @@ const Profile = () => {
               <Button
                 className='mt-3'
                 color='primary'
-                href='http://localhost:3000/'
                 target='_blank'
+                onClick={onSubmit}
               >
                 Save Details
               </Button>

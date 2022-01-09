@@ -1,4 +1,4 @@
-import { Badge, Button, Card, CardBody, CardTitle, Row, Col } from "reactstrap";
+import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import Account from './ui/Account';
 
 const Accounts = () => {
@@ -10,7 +10,7 @@ const Accounts = () => {
       <Row>
         <Col xs="12" md="12" sm="12">
           {/* --------------------------------------------------------------------------------*/}
-          {/* Card-1*/}
+          {/* Card*/}
           {/* --------------------------------------------------------------------------------*/}
           <Card>
             <CardTitle tag="h4" className="border-bottom p-3 mb-0">

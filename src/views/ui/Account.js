@@ -3,46 +3,45 @@ import {
   Col,
   Card,
   CardBody,
-  CardTitle,
-  Button,
   FormGroup,
-  Label,
   Input,
+  CardTitle,
   FormText,
 } from 'reactstrap';
+import { useState } from 'react';
 import Profile from './Profile';
+import Alert from './Alert';
 
 const Account = () => {
+  const [openAlert, setOpenAlert] = useState(false);
+
+  const closeAlert = () => {
+    setOpenAlert(false);
+  };
+
+//   const onSubmit = () => {
+//     setOpenAlert(true);
+//   };
   return (
-    <Row className='mt-3'>
-      <Col xs='6'>
-        {/* --------------------------------------------------------------------------------*/}
-        {/* Card-1*/}
-        {/* --------------------------------------------------------------------------------*/}
-        <Card>
-          {/* <CardTitle tag='h6' className='border-bottom p-3 mb-0'> */}
-          {/* <i className='bi bi-bell me-2'> </i> */}
-          {/* Profile
-          </CardTitle> */}
-          <CardBody className='p-4'>
-            <Row justify-content>
-              <Col lg='12'>
-                <Profile />
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
-      </Col>
-      <Col xs='6'>
+      <>
+    
+      <Row>
+      <Col xs='12'>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
         {/* --------------------------------------------------------------------------------*/}
         <Card>
           <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
             {/* <i className='bi bi-bell me-2'> </i> */}
-            Update Profile
+            Profile Info
           </CardTitle>
           <CardBody className='p-4'>
+            {openAlert && (
+              <Alert
+                message='picture successfully uploaded'
+                closeAlert={closeAlert}
+              />
+            )}
             <Row justify-content>
               <Col lg='8'>
                 <img
@@ -64,20 +63,42 @@ const Account = () => {
                     &nbsp; &nbsp; png and jpeg files only allowed
                   </FormText>
                 </FormGroup>
-                <Button
+                {/* <Button
                   className='mt-3'
                   color='primary'
-                  href='http://localhost:3000/'
+                //   href='http://localhost:3000/about'
                   target='_blank'
+                  onClick={onSubmit}
                 >
                   Upload picture
-                </Button>
+                </Button> */}
               </Col>
             </Row>
           </CardBody>
         </Card>
       </Col>
     </Row>
+    <Row className='mt-2'>
+      <Col xs='12'>
+        {/* --------------------------------------------------------------------------------*/}
+        {/* Card-1*/}
+        {/* --------------------------------------------------------------------------------*/}
+        <Card>
+          <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
+          {/* <i className='bi bi-bell me-2'> </i> */}
+          Personal Information
+          </CardTitle>
+          <CardBody className='p-4'>
+            <Row justify-content>
+              <Col lg='12'>
+                <Profile />
+              </Col>
+            </Row>
+          </CardBody>
+        </Card>
+      </Col>
+      </Row>
+    </>
   );
 };
 

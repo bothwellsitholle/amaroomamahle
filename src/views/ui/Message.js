@@ -21,7 +21,7 @@ import {
               </CardText>
               <div>
              <Button color="light-danger">Reject</Button>
-                <span style={{marginLeft: 20}}><Button color="light-warning">View Details</Button></span>
+                {/* <span style={{marginLeft: 20}}><Button color="light-warning">View Details</Button></span> */}
                 <span style={{marginLeft: 20}}><Button color="light-success">Approve</Button></span>
               </div>
             </Card>

@@ -24,7 +24,7 @@ const Sale = () => {
     }
   return (
     <Row>
-         {openAlert && <Alert message='Successfully submitted request'  closeAlert={closeAlert}/>}
+         {openAlert && <Alert message='Successfully logged a sale'  closeAlert={closeAlert}/>}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}

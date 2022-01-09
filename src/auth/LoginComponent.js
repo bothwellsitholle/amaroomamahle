@@ -6,7 +6,7 @@ const LoginComponent = ({ mode, onSubmit, setIsLoggedIn }) => {
   const [state_mode, setStateMode] = useState(mode);
 
   const toggleMode = () => {
-    let newMode = state_mode == 'login' ? 'signup' : 'login';
+    let newMode = state_mode === 'login' ? 'signup' : 'login';
     setStateMode(newMode);
   };
   return (
@@ -36,7 +36,8 @@ const LoginComponent = ({ mode, onSubmit, setIsLoggedIn }) => {
             <div className='form-block__toggle-block'>
               <span>
                 {state_mode === 'login' ? "Don't" : 'Already'} have an account? Click
-                here &#8594;
+                here 
+                &#8594;
               </span>
               <input id='form-toggler' type='checkbox' onClick={() => {toggleMode()}} />
               <label htmlFor='form-toggler'></label>

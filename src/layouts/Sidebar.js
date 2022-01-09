@@ -11,22 +11,22 @@ const navigation = [
   },
   {
     title: 'Messages',
-    href: '/alerts',
+    href: '/messages',
     icon: 'bi bi-bell',
   },
   {
     title: 'Visits',
-    href: '/badges',
+    href: '/visits',
     icon: 'bi bi-patch-check',
   },
   {
     title: 'Log A Sale',
-    href: '/buttons',
+    href: '/logsale',
     icon: 'bi bi-hdd-stack',
   },
   {
     title: 'Appointments',
-    href: '/table',
+    href: '/appointments',
     icon: 'bi bi-layout-split',
   },
   // {
@@ -36,7 +36,7 @@ const navigation = [
   // },
   {
     title: 'Support',
-    href: '/forms',
+    href: '/support',
     icon: 'bi bi-textarea-resize',
   },
   // {
@@ -46,12 +46,12 @@ const navigation = [
   // },
   {
     title: 'Settings',
-    href: '/grid',
+    href: '/settings',
     icon: 'bi bi-columns',
   },
   {
     title: 'Account',
-    href: '/about',
+    href: '/account',
     icon: 'bi bi-people',
   },
 ];

@@ -34,7 +34,7 @@ const About = () => {
                   href='http://localhost:3000/'
                   target='_blank'
                 >
-                  Check Pro Version
+                  Logout
                 </Button>
               </Col>
             </Row>

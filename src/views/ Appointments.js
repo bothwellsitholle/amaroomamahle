@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import {
   Alert,
-  UncontrolledAlert,
   Card,
   CardBody,
   CardTitle,
 } from 'reactstrap';
 
 const Appointments = () => {
-  // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
 
   const onDismiss = () => {

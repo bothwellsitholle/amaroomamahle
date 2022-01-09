@@ -10,6 +10,7 @@ import {
   Label,
   Input,
 } from 'reactstrap';
+// import DateTimePicker from '@mui/lab/DateTimePicker';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Alert from './Alert';
@@ -27,7 +28,7 @@ const Forms = () => {
 
   return (
     <Row>
-      {openAlert && <Alert message='Successfully submitted request'  closeAlert={closeAlert}/>}
+      {openAlert && <Alert message='Successfully logged a visit'  closeAlert={closeAlert}/>}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
@@ -57,7 +58,6 @@ const Forms = () => {
                     id='datetime-local'
                     label=''
                     type='datetime-local'
-                    defaultValue='2017-05-24T10:30'
                     sx={{ width: 250 }}
                     InputLabelProps={{
                       shrink: true,

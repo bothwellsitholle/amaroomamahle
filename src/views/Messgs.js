@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Message from './ui/Message';
 
 const Messages = () => {
-  // For Dismiss Button with Alert
-  // const [visible, setVisible] = useState(true);
-
-  // const onDismiss = () => {
-  //   setVisible(false);
-  // };
 
   return (
     <div>
