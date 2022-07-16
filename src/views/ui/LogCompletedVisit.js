@@ -11,68 +11,131 @@ import {
   Input,
 } from 'reactstrap';
 // import DateTimePicker from '@mui/lab/DateTimePicker';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
+// import TextField from '@mui/material/TextField';
+// import Stack from '@mui/material/Stack';
 import Alert from './Alert';
 
-const Forms = () => {
-    const [openAlert, setOpenAlert] = useState(false)
+const Forms = (props) => {
+  const [openAlert, setOpenAlert] = useState(false)
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [address, setAddress] = useState('')
 
-    const closeAlert = () => {
-        setOpenAlert(false);
-    }
+  let disabled = true
 
-    const onSubmit = () => {
-        setOpenAlert(true)
-    }
+  if (fullName && email && phone && address) {
+    disabled = false
+  }
 
+  const closeAlert = () => {
+    setOpenAlert(false)
+    setFullName('')
+    setEmail('')
+    setPhone('')
+    setAddress('')
+  }
+
+  const onSubmit = () => {
+    props.onComplete({
+      fullname: fullName,
+      email: email,
+      phone: phone,
+      address: address,
+    })
+    setOpenAlert(true)
+  }
   return (
     <Row>
-      {openAlert && <Alert message='Successfully logged a visit'  closeAlert={closeAlert}/>}
+      {openAlert && (
+        <Alert message="Successfully logged a sale" closeAlert={closeAlert} />
+      )}
       <Col>
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
         {/* --------------------------------------------------------------------------------*/}
         <Card>
-          {/* <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-              <i className="bi bi-bell me-2"> </i>
-              Form Example
-            </CardTitle> */}
           <CardBody>
             <Form>
               <FormGroup>
-                <Label for='exampleSelect'>Select client's name</Label>
-                <Input id='exampleSelect' name='select' type='select'>
-                  <option>Learmore Bango (12 white city soweto)</option>
-                  <option>Rajesh Mohammed (10 elloff JHB</option>
-                  <option>Ben Smith (12 white city soweto)</option>
-                  <option>Jame Kobbs (12 white city soweto)</option>
-                  <option>Amanda Nkala (12 white city soweto)</option>
-                </Input>
+                <Label for="exampleText">Client's Full Name</Label>
+                <Input
+                  id="exampleText"
+                  name="text"
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                />
               </FormGroup>
-              <br />
+
               <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input
+                  id="exampleEmail"
+                  name="email"
+                  placeholder="e.g example@gmail.com"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleText">Phone Number</Label>
+                <Input
+                  id="exampleText"
+                  name="number"
+                  type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </FormGroup>
+
+              {/* <FormGroup>
                 <Label for='exampleSelect'>Select Date & Time Completed</Label>
                 <Stack>
                   <TextField
+
                     id='datetime-local'
                     label=''
                     type='datetime-local'
+                    style={{backgroundColor: '#f6f6f6'}}
                     sx={{ width: 250 }}
                     InputLabelProps={{
                       shrink: true,
                     }}
                   />
                 </Stack>
+              </FormGroup> */}
+              {/* <FormGroup>
+                <Label for="exampleText">Amount (ZAR)</Label>
+                <Input
+                  id="exampleText"
+                  name="number"
+                  type="text"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                />
+              </FormGroup> */}
+              <FormGroup>
+                <Label for="exampleText">Address</Label>
+                <Input
+                  id="exampleText"
+                  name="text"
+                  type="textarea"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
               </FormGroup>
               <br />
-              <Button color='primary' onClick={() => onSubmit()}>Submit</Button>
+              <Button color="primary" onClick={onSubmit} disabled={disabled}>
+                Submit
+              </Button>
             </Form>
           </CardBody>
         </Card>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
 export default Forms;

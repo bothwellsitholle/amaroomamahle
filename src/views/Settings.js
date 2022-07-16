@@ -2,6 +2,7 @@ import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import Notifications from './ui/Notifications';
 import UpdatePassword from './ui/UpdatePassword';
 
+
 const Settings = () => {
   return (
     <div>

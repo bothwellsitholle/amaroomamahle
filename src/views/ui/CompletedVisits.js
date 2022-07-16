@@ -1,59 +1,10 @@
 import { Card, CardBody,  Table } from "reactstrap";
-import user1 from "../../assets/images/users/user1.jpg";
-import user2 from "../../assets/images/users/user2.jpg";
-import user3 from "../../assets/images/users/user3.jpg";
-import user4 from "../../assets/images/users/user4.jpg";
-import user5 from "../../assets/images/users/user5.jpg";
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const tableData = [
-  {
-    avatar: user1,
-    name: "Hanna Gover",
-    email: "hgover@gmail.com",
-    project: "073 345 1323",
-    status: "pending",
-    weeks: "01 Jan 2022",
-    budget: "2441 Main Rd, Bedfordview",
-  },
-  {
-    avatar: user2,
-    name: "Linda Motaung",
-    email: "hgover@gmail.com",
-    project: "074 6645 1326",
-    status: "done",
-    weeks: "02 Jan 2022",
-    budget: "1415 Thomas St, pretoria",
-  },
-  {
-    avatar: user3,
-    name: "Cathrine Gover",
-    email: "hgover@gmail.com",
-    project: "063 345 0001",
-    status: "holt",
-    weeks: "02 Jan 2022",
-    budget: " 389 Gemsbok St, santon",
-  },
-  {
-    avatar: user4,
-    name: "Bothwell Sithole",
-    email: "hgover@gmail.com",
-    project: "061 145 3330",
-    status: "pending",
-    weeks: "03 Jan 2022",
-    budget: "Street:  1535 Bo Meul St Fish Hoek",
-  },
-  {
-    avatar: user5,
-    name: "Andrew Smith",
-    email: "hgover@gmail.com",
-    project: "078 845 9923",
-    status: "done",
-    weeks: "06 Jan 2022",
-    budget: "883 Impala St, jhb central",
-  },
-];
 
-const CompletedVisits = () => {
+
+
+const CompletedVisits = ({visitsData, onDeleteVisit}) => {
   return (
     <div>
       <Card>
@@ -66,11 +17,12 @@ const CompletedVisits = () => {
                 {/* <th>Status</th> */}
                 <th>Date</th>
                 <th>Address</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {tableData.map((tdata, index) => (
-                <tr key={index} className="border-top">
+              {visitsData.map((tdata, index) => (
+                <tr key={tdata.id} className="border-top">
                   <td>
                     <div className="d-flex align-items-center p-2">
                       <img
@@ -86,7 +38,7 @@ const CompletedVisits = () => {
                       </div>
                     </div>
                   </td>
-                  <td>{tdata.project}</td>
+                  <td><div style={{minWidth: 100}} className="mb-0">{tdata.project}</div></td>
                   {/* <td>
                     {tdata.status === "pending" ? (
                       <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
@@ -96,8 +48,13 @@ const CompletedVisits = () => {
                       <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
                     )}
                   </td> */}
-                  <td>{tdata.weeks}</td>
-                  <td>{tdata.budget}</td>
+                  <td><div style={{minWidth: 100}} className="mb-0">{tdata.weeks} </div></td>
+                  <td><div style={{minWidth: 100}} className="mb-0">{tdata.budget}</div></td>
+                  <td>
+                    <span style={{color: 'red', cursor: 'pointer'}} onClick={() => onDeleteVisit(tdata.id)}>
+                      <DeleteIcon color="red" />
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -1,5 +1,10 @@
-import { Card, CardBody, CardSubtitle, CardTitle } from "reactstrap";
-import Chart from "react-apexcharts";
+import {
+  Card,
+  CardBody,
+  //  CardSubtitle,
+  CardTitle,
+} from 'reactstrap'
+import Chart from 'react-apexcharts'
 
 const SalesChart = () => {
   const options = {
@@ -15,7 +20,7 @@ const SalesChart = () => {
     stroke: {
       show: true,
       width: 4,
-      colors: ["transparent"],
+      colors: ['transparent'],
     },
     legend: {
       show: true,
@@ -23,23 +28,13 @@ const SalesChart = () => {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "60%",
+        columnWidth: '60%',
         borderRadius: 2,
       },
     },
-    colors: ["#0d6efd", "#009efb", "#6771dc"],
+    colors: ['#0d6efd', '#009efb', '#6771dc'],
     xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-      ],
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
     },
     responsive: [
       {
@@ -47,36 +42,36 @@ const SalesChart = () => {
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "60%",
+              columnWidth: '60%',
               borderRadius: 7,
             },
           },
         },
       },
     ],
-  };
+  }
   const series = [
     // {
     //   name: "2020",
     //   data: [20, 40, 50, 30, 40, 50, 30, 30, 40],
     // },
     {
-      name: "2021",
-      data: [10, 20, 40, 60, 20, 40, 90, 60, 20],
+      name: '2022',
+      data: [10, 20, 40, 60, 20, 40, 90],
     },
-  ];
+  ]
 
   return (
     <Card>
       <CardBody>
-        <CardTitle tag="h5">My Conversion Rate</CardTitle>
-        <CardSubtitle className="text-muted" tag="h6">
+        <CardTitle tag="h5">Your % Conversion Rate</CardTitle>
+        {/* <CardSubtitle className="text-muted" tag="h6">
            % montly conversion rate report
-        </CardSubtitle>
+        </CardSubtitle> */}
         <Chart options={options} series={series} type="bar" height="379" />
       </CardBody>
     </Card>
-  );
-};
+  )
+}
 
-export default SalesChart;
+export default SalesChart

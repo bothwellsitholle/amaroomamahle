@@ -104,16 +104,16 @@ const Header = () => {
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color='transparent'>
             <img
-              src={user1}
+              src={localStorage.getItem('avatar') || user1}
               alt='profile'
               className='rounded-circle'
               width='50'
             ></img>
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem onClick={() => {navigate('/grid')}}>Settings</DropdownItem>
-            <DropdownItem onClick={() => {navigate('/about')}}> Edit Profile</DropdownItem>
+            <DropdownItem header>{window.localStorage.getItem('fullname') || 'Sbusiso Nkala'}</DropdownItem>
+            <DropdownItem onClick={() => {navigate('/settings')}}>Settings</DropdownItem>
+            <DropdownItem onClick={() => {navigate('/account')}}> Edit Profile</DropdownItem>
             {/* <DropdownItem divider />
             <DropdownItem>Inbox</DropdownItem>
             <DropdownItem>

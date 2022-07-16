@@ -4,10 +4,13 @@ import LoginForm from './LoginForm';
 
 const LoginComponent = ({ mode, onSubmit, setIsLoggedIn }) => {
   const [state_mode, setStateMode] = useState(mode);
+  const [err, setErr] = useState(false);
+  const [errMessage, setErrMessage] = useState(false);
 
   const toggleMode = () => {
     let newMode = state_mode === 'login' ? 'signup' : 'login';
     setStateMode(newMode);
+    setErr(false)
   };
   return (
     <div>
@@ -43,10 +46,20 @@ const LoginComponent = ({ mode, onSubmit, setIsLoggedIn }) => {
               <label htmlFor='form-toggler'></label>
             </div>
           </header>
+          {err && <>
+          <div className="form-block__toggle-block">
+            <span style={{color: 'red'}}>{errMessage}</span>
+          </div>
+          <br/>
+          </>}
           <LoginForm
             mode={state_mode}
             onSubmit={onSubmit}
             setIsLoggedIn={setIsLoggedIn}
+            setErr={(a, b) => {
+              setErr(a)
+              setErrMessage(b)
+            }}
           />
         </section>
       </div>

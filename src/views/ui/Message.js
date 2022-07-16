@@ -8,7 +8,7 @@ import {
   } from "reactstrap";
 
   
-  const Message = ({title, message}) => {
+  const Message = ({title, message, id, phone, onApprove }) => {
     return (
       <div>
         <>
@@ -17,12 +17,16 @@ import {
             <Card body className="text-center">
               <CardTitle tag="h5">{title}</CardTitle>
               <CardText>
+                <br/>
                 {message}
               </CardText>
+              <CardText>
+                <span style={{color: 'grey'}}>Cell: {phone}</span>
+              </CardText>
               <div>
-             <Button color="light-danger">Reject</Button>
+             <Button color="light-danger" onClick={() => onApprove(id)}>Reject</Button>
                 {/* <span style={{marginLeft: 20}}><Button color="light-warning">View Details</Button></span> */}
-                <span style={{marginLeft: 20}}><Button color="light-success">Approve</Button></span>
+                <span style={{marginLeft: 20}}><Button color="light-success" onClick={() => onApprove(id)}>Approve</Button></span>
               </div>
             </Card>
           </Col>

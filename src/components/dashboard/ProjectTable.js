@@ -12,7 +12,7 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "073 345 1323",
     status: "pending",
-    weeks: "01 Jan 2022",
+    weeks: "01 July 2022",
     budget: "R1500",
   },
   {
@@ -21,7 +21,7 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "074 6645 1326",
     status: "done",
-    weeks: "02 Jan 2022",
+    weeks: "02 July 2022",
     budget: "R2500",
   },
   {
@@ -30,7 +30,7 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "063 345 0001",
     status: "done",
-    weeks: "02 Jan 2022",
+    weeks: "02 July 2022",
     budget: "R9000",
   },
   {
@@ -39,7 +39,7 @@ const tableData = [
     email: "hgover@gmail.com",
     project: "061 145 3330",
     status: "pending",
-    weeks: "03 Jan 2022",
+    weeks: "03 July 2022",
     budget: "R7500",
   },
   {
@@ -58,9 +58,9 @@ const ProjectTables = () => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle tag="h5">Viewings</CardTitle>
+          <CardTitle tag="h5">Recent Viewings</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            your list of recent viewings and their statuses
+            {/* your list of recent viewings and their statuses */}
           </CardSubtitle>
 
           <Table className="no-wrap mt-3 align-middle" responsive borderless>

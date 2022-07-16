@@ -7,49 +7,56 @@ import {
   Button,
   Form,
   FormGroup,
-} from 'reactstrap';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import React, { useState } from 'react';
-import Switch from '@mui/material/Switch';
+} from 'reactstrap'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import React, { useState } from 'react'
+import Switch from '@mui/material/Switch'
 import Alert from './Alert'
 
 const Notifications = () => {
-  const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: true,
-    gilad1: true,
-    jason1: false,
-    antoine1: true,
-  });
-
+  const settings = JSON.parse(localStorage.getItem('settings'))
+  const [state, setState] = useState(
+    settings
+      ? settings
+      : {
+          email: true,
+          text: false,
+          phone: true,
+          email1: true,
+          text1: false,
+          phone1: true,
+        },
+  )
 
   const [openAlert, setOpenAlert] = useState(false)
 
-    const closeAlert = () => {
-        setOpenAlert(false);
-    }
+  const closeAlert = () => {
+    setOpenAlert(false)
+  }
 
-    const onSubmit = () => {
-        setOpenAlert(true)
-    }
+  const onSubmit = () => {
+    localStorage.setItem('settings', JSON.stringify(state));
+    setOpenAlert(true)
+  }
 
   const handleChange = (event) => {
     setState({
       ...state,
       [event.target.name]: event.target.checked,
-    });
-  };
+    })
+  }
   return (
-    <Row className='mt-3'>
-        {openAlert && <Alert message='successfully saved changes'  closeAlert={closeAlert}/>}
-      <Col xs='6'>
+    <Row className="mt-3">
+      {openAlert && (
+        <Alert message="successfully saved changes" closeAlert={closeAlert} />
+      )}
+      <Col xs="6">
         {/* --------------------------------------------------------------------------------*/}
         {/* Card-1*/}
         {/* --------------------------------------------------------------------------------*/}
         <Card>
-          <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
-            <i className='bi bi-bell me-2'></i>
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <i className="bi bi-bell me-2"></i>
             Updates
           </CardTitle>
           <CardBody>
@@ -58,46 +65,46 @@ const Notifications = () => {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.gilad1}
+                      checked={state.email1}
                       onChange={handleChange}
-                      name='gilad1'
+                      name="email1"
                     />
                   }
-                  label='Email'
+                  label="Email"
                 />
               </FormGroup>
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason1}
+                      checked={state.text1}
                       onChange={handleChange}
-                      name='jason1'
+                      name="text1"
                     />
                   }
-                  label='Text'
+                  label="Text"
                 />
               </FormGroup>
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.antoine1}
+                      checked={state.phone1}
                       onChange={handleChange}
-                      name='antoine1'
+                      name="phone1"
                     />
                   }
-                  label='Phone Call'
+                  label="Phone Call"
                 />
               </FormGroup>
             </Form>
           </CardBody>
         </Card>
       </Col>
-      <Col xs='6'>
+      <Col xs="6">
         <Card>
-          <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
-            <i className='bi bi-card-text'> </i>
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <i className="bi bi-card-text"> </i>
             Messages
           </CardTitle>
           <CardBody>
@@ -106,36 +113,36 @@ const Notifications = () => {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.gilad}
+                      checked={state.email}
                       onChange={handleChange}
-                      name='gilad'
+                      name="email"
                     />
                   }
-                  label='Email'
+                  label="Email"
                 />
               </FormGroup>
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.jason}
+                      checked={state.text}
                       onChange={handleChange}
-                      name='jason'
+                      name="text"
                     />
                   }
-                  label='Text'
+                  label="Text"
                 />
               </FormGroup>
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={state.antoine}
+                      checked={state.phone}
                       onChange={handleChange}
-                      name='antoine'
+                      name="phone"
                     />
                   }
-                  label='Phone Call'
+                  label="Phone Call"
                 />
               </FormGroup>
             </Form>
@@ -143,10 +150,12 @@ const Notifications = () => {
         </Card>
       </Col>
       <div style={{ with: 120 }}>
-        <Button color='primary' onClick={onSubmit}>Save</Button>
+        <Button color="primary" onClick={onSubmit}>
+          Save
+        </Button>
       </div>
     </Row>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

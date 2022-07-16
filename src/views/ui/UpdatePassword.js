@@ -8,52 +8,67 @@ import {
   FormGroup,
   Label,
   Input,
-} from 'reactstrap';
-import {useState} from 'react'
-import Alert from './Alert';
-
+} from 'reactstrap'
+import { useState } from 'react'
+import Alert from './Alert'
 
 const UpdatePassword = () => {
-    const [openAlert, setOpenAlert] = useState(false);
+  const [openAlert, setOpenAlert] = useState(false)
+  const [password, setPassword] = useState('')
+  const [updatePassword, setUpdatePassword] = useState('')
+
+  let disabled = true
+  if (updatePassword && password && updatePassword === password) {
+    disabled = false
+  }
+
+  console.log('disable', disabled)
 
   const closeAlert = () => {
-    setOpenAlert(false);
-  };
+    setOpenAlert(false)
+  }
 
   const onSubmit = () => {
-    setOpenAlert(true);
-  };
+    localStorage.setItem('loginpassword', password)
+    setOpenAlert(true)
+  }
   return (
     <Row>
-        {openAlert && (
-            <Alert
-              message='Successfully saved changes'
-              closeAlert={closeAlert}
-            />
-          )}
+      {openAlert && (
+        <Alert message="Successfully saved changes" closeAlert={closeAlert} />
+      )}
       <Col>
-      <Card>
+        <Card>
           <CardBody>
             <Form>
               <FormGroup>
-                <Label for='examplePassword'>Password</Label>
+                <Label for="examplePassword">Password</Label>
                 <Input
-                  id='examplePassword'
-                  name='password'
-                  placeholder='********'
-                  type='password'
+                  id="examplePassword"
+                  name="password"
+                  placeholder="********"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>
-                <Label for='examplePassword'>Confirm Password</Label>
+                <Label for="examplePassword">Confirm Password</Label>
                 <Input
-                  id='examplePassword'
-                  name='password'
-                  placeholder='********'
-                  type='password'
+                  id="examplePassword"
+                  name="password"
+                  placeholder="********"
+                  type="password"
+                  value={updatePassword}
+                  onChange={(e) => setUpdatePassword(e.target.value)}
                 />
               </FormGroup>
-              <Button className='mt-3' color='primary' onClick={onSubmit}>
+              <Button
+                disabled={disabled}
+                className="mt-3"
+                color="primary"
+                onClick={onSubmit}
+              >
                 Save
               </Button>
             </Form>
@@ -61,7 +76,7 @@ const UpdatePassword = () => {
         </Card>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default UpdatePassword;
+export default UpdatePassword

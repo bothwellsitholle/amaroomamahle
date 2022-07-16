@@ -23,7 +23,8 @@ const Appointments = () => {
         <CardBody className=''>
           <div>
             <Alert
-              color='primary'
+              color='warning'
+              // color="light-success"
               isOpen={visible}
               toggle={onDismiss.bind(null)}
             >
