@@ -21,7 +21,7 @@ const LoginForm = ({ mode, onSubmit, setIsLoggedIn, setErr }) => {
   const [repeatpassword, setRepeatpassword] = useState('')
   const [loading,] = useState(false)
 
-  // const login = { username: 'admin', password: '123test' }
+  //  { username: 'admin', password: '123test' }
 
   const loginHandler = () => {
     console.log('username:  ', username, ' password: ', password, 'local email', localStorage.getItem('email'), ' loginpassword: ', localStorage.getItem('loginpassword') )
