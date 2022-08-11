@@ -6,7 +6,7 @@ import {
   CardTitle,
   Breadcrumb,
   BreadcrumbItem,
-} from 'reactstrap';
+} from "reactstrap";
 
 const Breadcrumbs = () => {
   return (
@@ -16,26 +16,26 @@ const Breadcrumbs = () => {
         {/* Card-1*/}
         {/* --------------------------------------------------------------------------------*/}
         <Card>
-          <CardTitle tag='h6' className='border-bottom p-3 mb-0'>
-            <i className='bi bi-link me-2'> </i>
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+            <i className="bi bi-link me-2"> </i>
             Basic Breadcrumbs
           </CardTitle>
-          <CardBody className=''>
+          <CardBody className="">
             <Breadcrumb>
               <BreadcrumbItem active>Home</BreadcrumbItem>
             </Breadcrumb>
             <Breadcrumb>
               <BreadcrumbItem>
-                <a href='/'>Home</a>
+                <a href="/">Home</a>
               </BreadcrumbItem>
               <BreadcrumbItem active>Library</BreadcrumbItem>
             </Breadcrumb>
             <Breadcrumb>
               <BreadcrumbItem>
-                <a href='/'>Home</a>
+                <a href="/">Home</a>
               </BreadcrumbItem>
               <BreadcrumbItem>
-                <a href='/'>Library</a>
+                <a href="/">Library</a>
               </BreadcrumbItem>
               <BreadcrumbItem active>Data</BreadcrumbItem>
             </Breadcrumb>

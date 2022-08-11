@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRoutes } from 'react-router-dom';
 import Themeroutes from './routes/Router';
 import LoginComponent from './auth/LoginComponent';
@@ -29,6 +30,15 @@ const App = () => {
       )}
     </>
   );
+=======
+import { useRoutes } from "react-router-dom";
+import Themeroutes from "./routes/Router";
+
+const App = () => {
+  const routing = useRoutes(Themeroutes);
+
+  return <div className="dark">{routing}</div>;
+>>>>>>> f6f914f (Alpha phase complete)
 };
 
 export default App;

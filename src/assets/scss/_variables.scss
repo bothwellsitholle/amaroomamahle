@@ -1,6 +1,7 @@
 /*******************/
 // Theme Fonts
 /********************/
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 $font-family-sans-serif: 'Poppins', sans-serif;
 /*******************/
@@ -15,11 +16,22 @@ $info: #FF8C8C;
 $danger: #CE6262;
 // $danger: #9B0000;
 // $danger: #8946a6;
+=======
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+$font-family-sans-serif: "Poppins", sans-serif;
+/*******************/
+// Theme Colors
+/********************/
+$primary: #1e88e5;
+$info: #26c6da;
+$danger: #f62d51;
+>>>>>>> f6f914f (Alpha phase complete)
 $success: #39c449;
 $warning: #ffbc34;
 $dark: #343a40;
 $light: #eaf2fb;
 $secondary: #35363b;
+<<<<<<< HEAD
 $logout: #8946A6;
 
 $theme-colors: (
@@ -36,6 +48,23 @@ $theme-colors: (
   'light-info': #d3edfa,
   'light-warning': #f8ecdc,
   'light-danger': #f8dddd,
+=======
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "light-primary": #d6e4f3,
+  "light-success": #d5f3f2,
+  "light-info": #d3edfa,
+  "light-warning": #f8ecdc,
+  "light-danger": #f8dddd,
+>>>>>>> f6f914f (Alpha phase complete)
 );
 // scss-docs-start gray-color-variables
 $white: #fff !default;

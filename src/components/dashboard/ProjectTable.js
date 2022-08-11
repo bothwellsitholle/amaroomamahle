@@ -10,6 +10,7 @@ const tableData = [
     avatar: user1,
     name: "Hanna Gover",
     email: "hgover@gmail.com",
+<<<<<<< HEAD
     project: "073 345 1323",
     status: "pending",
     weeks: "01 July 2022",
@@ -50,6 +51,48 @@ const tableData = [
     status: "done",
     weeks: "06 Jan 2022",
     budget: "R2500",
+=======
+    project: "Flexy React",
+    status: "pending",
+    weeks: "35",
+    budget: "95K",
+  },
+  {
+    avatar: user2,
+    name: "Hanna Gover",
+    email: "hgover@gmail.com",
+    project: "Lading pro React",
+    status: "done",
+    weeks: "35",
+    budget: "95K",
+  },
+  {
+    avatar: user3,
+    name: "Hanna Gover",
+    email: "hgover@gmail.com",
+    project: "Elite React",
+    status: "holt",
+    weeks: "35",
+    budget: "95K",
+  },
+  {
+    avatar: user4,
+    name: "Hanna Gover",
+    email: "hgover@gmail.com",
+    project: "Flexy React",
+    status: "pending",
+    weeks: "35",
+    budget: "95K",
+  },
+  {
+    avatar: user5,
+    name: "Hanna Gover",
+    email: "hgover@gmail.com",
+    project: "Ample React",
+    status: "done",
+    weeks: "35",
+    budget: "95K",
+>>>>>>> f6f914f (Alpha phase complete)
   },
 ];
 
@@ -58,20 +101,35 @@ const ProjectTables = () => {
     <div>
       <Card>
         <CardBody>
+<<<<<<< HEAD
           <CardTitle tag="h5">Recent Viewings</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             {/* your list of recent viewings and their statuses */}
+=======
+          <CardTitle tag="h5">Project Listing</CardTitle>
+          <CardSubtitle className="mb-2 text-muted" tag="h6">
+            Overview of the projects
+>>>>>>> f6f914f (Alpha phase complete)
           </CardSubtitle>
 
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
+<<<<<<< HEAD
                 <th>Client Name</th>
                 <th>Phone</th>
 
                 <th>Status</th>
                 <th>Date</th>
                 <th>Cost</th>
+=======
+                <th>Team Lead</th>
+                <th>Project</th>
+
+                <th>Status</th>
+                <th>Weeks</th>
+                <th>Budget</th>
+>>>>>>> f6f914f (Alpha phase complete)
               </tr>
             </thead>
             <tbody>
